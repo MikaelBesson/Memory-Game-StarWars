@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+}
+#container {
+    width: 90%;
+    margin: auto;
+    background-image: url("./images/fondMemory.jpg");
+    background-size: cover;
+}
+
+
+h1 {
+    text-align: center;
+    color: gold;
+    font-size: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 2vh;
+    color: gold;
+    font-size: 20px;
+}
+
+#bordure {
+    width: 90%;
+    height: 80vh;
+    margin: auto;
+}
+
+
