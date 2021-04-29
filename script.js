@@ -18,6 +18,7 @@ for (let i = 0; i < imgCartes.length; i++) {
 }
 
     // attribution d'une valeur au carte 0= face cacher 1= face visible -1= la carte est retirer du plateau
+    // assigning a value to the card 0 = face down 1 = face up -1 = the card is removed from the board
 
 function majAffichage(noCarte) {
     switch (dosCartes[noCarte]) {
@@ -34,6 +35,7 @@ function majAffichage(noCarte) {
 }
 
     // fonction qui melange les cartes au debut du jeu
+    // function that shuffles the cards at the start of the game
 
 function initialiseJeu() {
     for (let position = faceCartes.length - 1; position >= 1; position--) {
@@ -44,7 +46,8 @@ function initialiseJeu() {
     }
 }
 
-    // verifie que 2 carte retourner sont les meme si oui elle séfface si non elle sont remis en possition dos de carte
+    // verifie que 2 carte retourner sont les meme si oui elle s'éfface sinon elles sont remis en position dos de carte
+    // check that 2 return cards are the same if yes it is deleted if not they are put back in possession on the back of the card
 
 function controleJeu(noCarte) {
 
@@ -61,7 +64,8 @@ function controleJeu(noCarte) {
             if (faceCartes[cartesCacher[0]] === faceCartes[cartesCacher[1]]) {
                 nouveauEtat = -1;
 
-                //si la paire est bonne on ajoute 1 point au joueur
+                // si la paire est bonne on ajoute 1 point au joueur
+                // if the pair is good we add 1 point to the player
 
                 nbPairesTrouvees++;
                 score.innerHTML = afficheScore++;
@@ -70,7 +74,8 @@ function controleJeu(noCarte) {
             dosCartes[cartesCacher[0]] = nouveauEtat;
             dosCartes[cartesCacher[1]] = nouveauEtat;
 
-                // un timer pour verifier que le jeu et terminer et laisser le temp au joueur de voir ce qui ce passe
+            // un timer pour verifier que le jeu et terminer et laisser le temp au joueur de voir ce qui ce passe
+            // a timer to check that the game is playing and to end it and give the player time to see what happens
 
             setTimeout(function () {
                 majAffichage(cartesCacher[0]);
@@ -84,7 +89,9 @@ function controleJeu(noCarte) {
     }
 }
 
-    //quand le joueur a gagner une alerte message et rechargement de la page
+    // quand le joueur a gagner une alerte message et rechargement de la page
+    // when the player wins an alert message and page reload
+
 function rejouer() {
     alert("Bravo la force et avec toi !");
     alert("Melange des carte pour une prochaine partie");
